@@ -158,6 +158,7 @@ deleteNoteDialogDeleteBtn.addEventListener("click", function (e) {
 });
 
 noteForm.addEventListener("submit", function (e) {
+  // TODO: add some validation for note title and body inputs based on provided requirements and constraints
   e.preventDefault();
 
   const noteFormData = new FormData(this);
@@ -185,7 +186,7 @@ noteForm.addEventListener("submit", function (e) {
       displayNotesWrapper.style.display = "block";
     }
   } else {
-    notes[currentlySelectedNoteIndex] = noteData;
+    notes[currentlySelectedNoteIndex] = { ...noteData };
 
     noteListWrapper.children[currentlySelectedNoteIndex].replaceWith(
       newNoteElement
