@@ -1,0 +1,380 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    max-width: 376px;
+}
+
+:root {
+    --inter-font-family: 'Inter', sans-serif;
+    --dark-bg-color: #1B1C1E;
+    --light-gray-bg-color: #EEEFF0;
+}
+
+.pageTitleWrapper {
+    margin: 16px 16px 0 16px;
+    padding: 4px 0;
+    display: flex;
+    align-items: center;
+}
+
+.pageTitleText {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    text-align: left;
+    margin: 0;
+}
+
+.pageTitleIcon {
+    width: 15px;
+    height: 19px;
+    margin-right: 15px;
+    margin-left: 7px;
+}
+
+.searchInputWrapper {
+    margin: 24px 16px;
+}
+
+.searchInput {
+    padding: 8px 12px 8px 48px;
+    background: var(--light-gray-bg-color) url('./assets/search_icon.svg') no-repeat center left 12px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 12px;
+    border: none;
+    font-family: var(--inter-font-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25.6px;
+    text-align: left;
+    color: #5B5C5E;
+}
+
+.searchInput:hover:not(:focus) {
+    background: #DCDEE0 url('./assets/search_icon.svg') no-repeat center left 12px;
+}
+
+.searchInput:focus {
+    padding: 7px 11px 7px 47px;
+    background: #FFFFFF url('./assets/search_icon.svg') no-repeat center left 11px;
+    border: 1px solid var(--dark-bg-color);
+    outline: none;
+    color: #1B1C1E;
+}
+
+.emptyNotesWrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 36px;
+}
+
+.infoIconOuterCircle {
+    border-radius: 50%;
+    background-color: var(--light-gray-bg-color);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.infoIconInnerCircle {
+    border-radius: 50%;
+    background-color: var(--dark-bg-color);
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.emptyNotesTitle {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    text-align: center;
+    margin: 16px 0 0 0;
+}
+
+.emptyNotesDescription {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25.6px;
+    text-align: center;
+    margin: 12px 0 24px 0;    
+}
+
+.secondaryBtn {
+    border-radius: 12px;
+    border: 1px solid #BCBCBD;
+    background-color: #FFFFFF;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--inter-font-family);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.secondaryBtn:hover {
+    background-color: #E7E7E7;
+}
+
+.secondaryBtn:active {
+    background-color: #BDBDBD;
+}
+
+.secondaryBtnLabel {
+    font-family: var(--inter-font-family);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    display: block;
+}
+
+.emptyNotesAddNoteBtnIcon {
+    margin-right: 12px;
+    width: 16px;
+    height: 20px;
+}
+
+.primaryBtn {
+    border-radius: 12px;
+    border: 1px solid #BCBCBD;
+    background-color: #6B3C9B;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--inter-font-family);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #FFFFFF;
+    border: none;
+}
+
+.primaryBtn:hover {
+    background-color: #844DBA;
+}
+
+.primaryBtn:active {
+    background-color: #5B2F87;
+}
+
+.primaryBtnLabel {
+    font-family: var(--inter-font-family);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.displayNotesWrapper {
+    /* we expect that notes won't be persisted so initially this piece of layout won't visible as there won't be any notes to display */
+    display: none;
+    margin-top: 24px;
+}
+
+.noteListItemHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+.noteListItemActionsWrapper {
+    display: flex;
+    gap: 8px;
+}
+
+.noteListItemActionsBtn {
+    height: 20px;
+    width: 20px;
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+.noteListItemTitle {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 23.8px;
+    text-align: left;
+    color: #1B1C1E;
+}
+
+.noteListWrapper {
+    margin-top: 24px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.noteListItemWrapper {
+    box-shadow: 0px 4px 16px 0px #00000012;
+    border-radius: 12px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 0 16px;
+}
+
+.noteListItemWrapper:not(:first-of-type) {
+    margin-top: 16px;
+}
+
+.noteListItemBody {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 23.8px;
+    text-align: left;
+    margin: 0;
+    color: #3B3C3E;
+}
+
+.noteListItemDate {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15.6px;
+    text-align: left;
+    margin: 0;
+    color: #5B5C5E;
+}
+
+.addNewNoteBtnWrapper {
+    margin-bottom: 24px;
+    padding: 0 16px;
+}
+
+.addNewNoteBtn {
+    width: 100%;
+}
+
+.noteFormWrapper {
+    display: none;
+    box-shadow: 0px 0px 16px 0px #00000014;
+    border-width: 1px 0 1px 0;
+    border-style: solid;
+    border-color: #EEEFF0;
+    padding: 20px 16px 20px 16px;
+}
+
+.noteFormInputsWrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+    gap: 16px;
+}
+
+.noteFormSaveBtn {
+    align-self: flex-end;
+    width: fit-content;
+}
+
+.noteFormBodyInput {
+    /* I can see the resize icon visible in the designs
+    but the reguirements for this haven't been specified so for simplifying things I turned it off*/
+    resize: none;
+}
+
+.textInput {
+    padding: 8px 12px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: var(--light-gray-bg-color);
+    border: 1px solid var(--light-gray-bg-color);
+    border-radius: 12px;
+    font-family: var(--inter-font-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25.6px;
+    color: #5B5C5E;
+}
+
+.textInput:hover:not(:focus) {
+    background-color: #DCDEE0;
+    border: 1px solid #DCDEE0;
+}
+
+.textInput:focus {
+    background-color: #FFFFFF;
+    border: 1px solid var(--dark-bg-color);
+    outline: none;
+    color: #1B1C1E;
+}
+
+.noteFormTitleWrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.addNewNoteTitle {
+    font-family: var(--inter-font-family);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 25.6px;
+    margin: 0;
+}
+
+.noteFormCancelBtn {
+    font-family: var(--inter-font-family);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 23.8px;
+    color: #0F75B8;
+    border: none;
+    background: none;
+}
+
+.noteFormCancelBtn:hover:not(:focus) {
+    text-decoration: underline;
+}
+
+.noteFormCancelBtn:active {
+    outline: none;
+}
+
+.deleteNoteDialog {
+    display: none;
+    top: 265px;
+    padding: 24px;
+    gap: 24px;
+    border-radius: 16px;
+    margin: 0 16px;
+    flex-direction: column;
+    border: none;
+    box-shadow: 0px 6px 4px 0px #00000026;
+}
+
+.deleteNoteDialog::backdrop {
+    background-color: rgb(0 0 0 / 10%);
+}
+
+.deletNoteDialogTitle {
+    margin: 0;
+    font-family: var(--inter-font-family);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    color: #1B1C1E;
+}
+
+.deleteNoteDialogDescription {
+    font-family: var(--inter-font-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25.6px;
+    margin: 0;
+}
+
+.deleteNoteDialogActionsWrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.deleteNoteDialogBtn {
+    width: 140px;
+}

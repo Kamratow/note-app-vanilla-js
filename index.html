@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <title>Note app</title>
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="pageTitleWrapper">
+        <img
+          class="pageTitleIcon"
+          src="./assets/note_icon.svg"
+          alt="note icon"
+        />
+        <h1 class="pageTitleText">Notes</h1>
+      </div>
+    </header>
+    <main>
+      <div class="searchInputWrapper">
+        <input
+          type="text"
+          id="searchInput"
+          class="searchInput"
+          placeholder="Search notes..."
+        />
+      </div>
+      <div id="noteFormWrapper" class="noteFormWrapper">
+        <div class="noteFormTitleWrapper">
+          <h2 id="noteFormTitle" class="noteFormTitle">Add new note</h2>
+          <button
+            type="button"
+            id="noteFormCancelBtn"
+            class="noteFormCancelBtn"
+          >
+            Cancel
+          </button>
+        </div>
+        <form name="noteForm" id="noteForm">
+          <div class="noteFormInputsWrapper">
+            <input
+              type="text"
+              name="noteTitle"
+              maxlength="40"
+              minlength="1"
+              placeholder="Note title"
+              class="textInput"
+            />
+            <textarea
+              name="noteBody"
+              placeholder="Your note"
+              rows="6"
+              minlength="1"
+              maxlength="200"
+              class="textInput noteFormBodyInput"
+            ></textarea>
+            <button type="submit" class="primaryBtn noteFormSaveBtn">
+              Save
+            </button>
+          </div>
+        </form>
+      </div>
+      <div id="emptyNotesWrapper" class="emptyNotesWrapper">
+        <div class="infoIconWrapper">
+          <div class="infoIconOuterCircle">
+            <div class="infoIconInnerCircle">
+              <img
+                class="infoIcon"
+                src="./assets/info_icon.svg"
+                alt="info icon"
+              />
+            </div>
+          </div>
+        </div>
+        <h2 class="emptyNotesTitle">No notes yet</h2>
+        <p class="emptyNotesDescription">
+          Add a note to keep track of your learnings.
+        </p>
+        <button
+          id="emptyNotesAddNewNoteBtn"
+          class="secondaryBtn emptyNotesAddNewNoteBtn"
+        >
+          <img
+            class="emptyNotesAddNoteBtnIcon"
+            src="./assets/add_note_icon.svg"
+            alt="add note icon"
+          /><span class="emptyNotesAddNoteBtnLabel">Add note</span>
+        </button>
+      </div>
+      <div id="displayNotesWrapper" class="displayNotesWrapper">
+        <div class="addNewNoteBtnWrapper">
+          <button id="addNewNoteBtn" class="primaryBtn addNewNoteBtn">
+            Add New
+          </button>
+        </div>
+        <ul id="noteListWrapper" class="noteListWrapper"></ul>
+      </div>
+      <dialog id="deleteNoteDialog" class="deleteNoteDialog">
+        <h2 class="deletNoteDialogTitle">Delete Note</h2>
+        <p class="deleteNoteDialogDescription">
+          Are you sure you want to delete this note?
+        </p>
+        <div class="deleteNoteDialogActionsWrapper">
+          <button
+            type="button"
+            id="deleteNoteDialogCancelBtn"
+            class="secondaryBtn deleteNoteDialogBtn"
+          >
+            Cancel
+          </button>
+          <button
+            type="button"
+            id="deleteNoteDialogDeleteBtn"
+            class="primaryBtn deleteNoteDialogBtn"
+          >
+            Delete
+          </button>
+        </div>
+      </dialog>
+    </main>
+  </body>
+</html>
